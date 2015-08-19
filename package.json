@@ -21,8 +21,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-template": "^3.0.0"
-  },
-  "dependencies": {
     "gulp-minify-css": "^1.2.0"
   }
 }
