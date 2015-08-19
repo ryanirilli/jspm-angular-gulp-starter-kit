@@ -16,5 +16,5 @@ cd into cloned directory
 npm install
 jspm install
 gulp
-go to localhost:8080 in your browser
+open http://localhost:8080 in your browser
 ```
