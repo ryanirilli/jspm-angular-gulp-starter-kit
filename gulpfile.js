@@ -14,7 +14,6 @@ var templateCache = require('gulp-angular-templatecache');
 var template = require('gulp-template');
 var rename = require("gulp-rename");
 var exec = require('child_process').exec;
-var argv = require('yargs').argv;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -92,7 +91,7 @@ gulp.task('clean', function () {
 
 
 gulp.task('sass', function () {
-  var sassCompile = gulp.src('./app/styles/**/*.scss')
+  var sassCompile = gulp.src('./src/styles/**/*.scss')
     .pipe(sass().on('error', sass.logError));
   if(minifyStyles) {
     sassCompile.pipe(minifyCSS());
@@ -136,9 +135,9 @@ gulp.task('connect', function() {
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('watch', function () {
-  gulp.watch(['./app/**/*.html', 'index.html'], ['html']);
-  gulp.watch(['./app/**/*.js'], ['js']);
-  gulp.watch(['./app/styles/**/*.scss'], ['css']);
+  gulp.watch(['./src/**/*.html'], ['html']);
+  gulp.watch(['./src/**/*.js'], ['js']);
+  gulp.watch(['./src/**/*.scss'], ['css']);
 });
 
 gulp.task('html', ['templates'], function () {
@@ -147,7 +146,7 @@ gulp.task('html', ['templates'], function () {
 });
 
 gulp.task('js', function () {
-  gulp.src('./app/**/*.js')
+  gulp.src('./src/**/*.js')
     .pipe(connect.reload());
 });
 
@@ -163,12 +162,12 @@ gulp.task('css', ['sass'], function () {
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('templates', function(){
-  return gulp.src('./app/**/*.html')
+  return gulp.src('./src/**/*.html')
     .pipe(templateCache({
       standalone: true,
       templateHeader: 'import angular from "angular"; export default angular.module("<%= module %>"<%= standalone %>).run(["$templateCache", function($templateCache){'
     }))
-    .pipe(gulp.dest('./app/cachedTemplates'))
+    .pipe(gulp.dest('./src/cachedTemplates'))
 });
 
 ////////////////////////////////////////////////////////////////////////////////

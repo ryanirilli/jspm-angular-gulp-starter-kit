@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "buildjs": "jspm bundle-sfx app/main dist/js/app.min.js --minify --skip-source-maps"
+    "buildjs": "jspm bundle-sfx src/main dist/js/app.min.js --minify --skip-source-maps"
   },
   "jspm": {
     "directories": {},
@@ -20,8 +20,7 @@
     "gulp-connect": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
-    "gulp-template": "^3.0.0",
-    "yargs": "^3.19.0"
+    "gulp-template": "^3.0.0"
   },
   "dependencies": {
     "gulp-minify-css": "^1.2.0"
