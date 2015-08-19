@@ -10,10 +10,11 @@ be as simple as possible for people to get started with JSPM and Angular.
 ## Install
 
 ```
-npm install -g jspm
+npm install -g jspm gulp
 git clone git@github.com:ryanirilli/jspm-angular-gulp-starter-kit.git
 cd into cloned directory
 npm install
 jspm install
 gulp
+go to localhost:8080 in your browser
 ```
