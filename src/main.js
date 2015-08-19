@@ -4,7 +4,7 @@ import templates from './cachedTemplates/templates';
 import routes from './routes';
 import applicationController from './app/applicationController';
 
-let app = angular.module('pointsLoyaltyWallet', ['ui.router', 'templates'])
+let app = angular.module('application', ['ui.router', 'templates'])
   .config(["$stateProvider", "$urlRouterProvider", routes])
   .controller('applicationController', ['$injector', applicationController]);
 
