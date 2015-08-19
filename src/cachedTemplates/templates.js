@@ -1,1 +1,0 @@
-import angular from "angular"; export default angular.module("templates", []).run(["$templateCache", function($templateCache){$templateCache.put("app/home/home.tpl.html","<h1>Welcome home</h1>");}]);
