@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <title>Points Loyalty Wallet</title>
+    <%if (isProd) {%>
+    <link rel="stylesheet" href="css/app.css">
+    <% } else { %>
+    <link rel="stylesheet" href="dist/css/app.css">
+    <% } %>
+</head>
+<body ng-app="pointsLoyaltyWallet">
+<%if (isProd) {%>
+<script src="js/app.min.js"></script>
+<% } else { %>
+<script src="jspm_packages/system.js"></script>
+<script src="config.js"></script>
+<script>
+    System.import('app/main');
+</script>
+<% } %>
+<div ng-controller="applicationController as appCtrl" class="page">
+    <ui-view></ui-view>
+</div>
+</body>
+</html>
